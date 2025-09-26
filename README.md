@@ -16,3 +16,7 @@ Open notebooks in Jupyter and execute cells.
 git add README.md
 git commit -m "Add README"
 git push
+# Repro steps
+git clone <your-repo>
+dvc pull              # (if remote set) fetch data/models
+dvc repro             # run full pipeline end-to-end
