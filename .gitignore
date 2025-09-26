@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 outputs/
 models/
+/zomato_df_final_data.csv
