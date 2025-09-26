@@ -1,4 +1,7 @@
 [core]
     remote = local_store
+[cache]
+    type = copy
+    dir = C:\dvc-cache
 ['remote "local_store"']
     url = ../../../dvc_store

@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python scripts/preprocess.py zomato_df_final_data.csv outputs/data_clean.csv
+    deps:
+    - path: scripts/preprocess.py
+      hash: md5
+      md5: 0909e3f229079c99c1218947dd452505
+      size: 558
+    - path: zomato_df_final_data.csv
+      hash: md5
+      md5: 6bb696eac5889d15f134cee5ff09eb5d
+      size: 2690897
+    outs:
+    - path: outputs/data_clean.csv
+      hash: md5
+      md5: a2321febd3567a2c40788c7eab57971e
+      size: 1833467
