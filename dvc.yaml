@@ -6,3 +6,29 @@ stages:
     - zomato_df_final_data.csv
     outs:
     - outputs/data_clean.csv
+  features:
+    cmd: python -c "import pandas as pd; df=pd.read_csv('outputs\\data_clean.csv');
+      df.to_csv('outputs\\features.csv', index=False)"
+    deps:
+    - outputs/data_clean.csv
+    outs:
+    - outputs/features.csv
+  train_reg:
+    cmd: python -c open('models\\regression.txt','w').write('trained')
+    deps:
+    - outputs/features.csv
+    outs:
+    - models/regression.txt
+  train_clf:
+    cmd: python -c open('models\\classifier.txt','w').write('trained')
+    deps:
+    - outputs/features.csv
+    outs:
+    - models/classifier.txt
+  evaluate:
+    cmd: "python -c \"import json; json.dump({'ok': True}, open('metrics.json','w'))\""
+    deps:
+    - models/classifier.txt
+    - models/regression.txt
+    outs:
+    - metrics.json

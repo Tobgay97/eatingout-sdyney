@@ -5,3 +5,4 @@ outputs/
 models/
 /zomato_df_final_data.csv
 dvc_store/ 
+/metrics.json
